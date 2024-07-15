@@ -1,0 +1,18 @@
+version: "3"
+services:
+  service_name:
+    image: imagename
+    container_name: containername
+    entrypoint: ["command to be executed"]
+    depends_on:
+      - anyotherservice
+    working_dir: workingdirection
+    environment:
+      - KEY=value
+    ports:
+      - 80:80
+      - 1234:1234
+      - 8080:3344
+    volumes:
+      - ./relativehostpath:pathincontainer
+      - /absolutehostpath:pathincontainer
