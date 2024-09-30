@@ -1,6 +1,7 @@
 <suite name="Test Suite">
     <test name="DemoTest">
         <parameter name="textToInsert" value="Davit"/>
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="DemoTest"/>
         </classes>

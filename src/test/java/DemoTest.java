@@ -1,4 +1,5 @@
 import Pages.TestFirstPage.TestPage;
+import WebDriverManager.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -12,10 +13,10 @@ public class DemoTest {
     private String textToInsert;
 
     @BeforeMethod
-    @Parameters({"textToInsert"})
-    public void start(String textToInsert) {
+    @Parameters({"textToInsert", "browser"})
+    public void start(String textToInsert, String browser) {
         this.textToInsert = textToInsert;
-        driver = new ChromeDriver();
+        driver = WebDriverManager.getInstance(browser).getDriver();
         driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
     }
